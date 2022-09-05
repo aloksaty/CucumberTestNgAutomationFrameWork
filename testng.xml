@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <listeners>
+
+      <listener class-name="com.alok.aut.Listeners.TestNgListener"></listener>
+
+  </listeners>
+  <test name="TestChrome">
+
+    <parameter name="hubAddress" value="http://127.0.0.1:4444/wd/hub" />
+    <parameter name="platform" value="Any" />
+   <parameter name="browserType" value="chrome" />
+    <parameter name="version" value="46" />
+    <parameter name="env" value="QE" />
+    <parameter name="testType" value="${testType}" />
+    <classes>
+      <class name="com.alok.aut.Runner.TestNGCucumber"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
