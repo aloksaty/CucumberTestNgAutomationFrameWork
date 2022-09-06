@@ -1,8 +1,6 @@
 package com.alok.aut.Listeners;
-
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeSuite;
-
 public class ParseTestNgXml {
 	
 	@BeforeSuite
