@@ -12,4 +12,22 @@ This project using the following languages and frameworks:
 - Log4J2 as the logging management strategy
 - WebDriverManager as the Selenium binaries management
 - Owner to minimize the code to handle the properties file
-- CSV ,DB Manager,Excel manager are created for data management.  
+- CSV ,DB Manager,Excel manager are created for data management. 
+
+# Test architecture
+
+We know that any automation project starting with a good test architecture.
+This project can be your initial test architecture for a faster start.
+You will see the following items in this architecture:
+
+* [Page Objects pattern](#page-objects-pattern)
+* [Execution types](#execution-types)
+* [BaseTest](#basetest)
+* [TestListener](#testlistener)
+* [Logging](#logging)
+* [Configuration files](#configuration-files)
+* [Parallel execution](#parallel-execution)
+* Cucumber For BDD
+
+
+Do you have any other items to add to this test architecture? Please do a pull request or open an issue to discuss.
