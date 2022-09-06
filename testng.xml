@@ -10,7 +10,7 @@
 
     <parameter name="hubAddress" value="http://127.0.0.1:4444/wd/hub" />
     <parameter name="platform" value="Any" />
-   <parameter name="browserType" value="chrome" />
+   <parameter name="browserType" value="${browser}" />
     <parameter name="version" value="46" />
     <parameter name="env" value="QE" />
     <parameter name="testType" value="${testType}" />

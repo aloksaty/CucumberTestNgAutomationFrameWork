@@ -8,8 +8,8 @@ import io.cucumber.testng.TestNGCucumberRunner;
 import org.testng.annotations.*;
 @CucumberOptions(
 
-       // plugin= {"pretty","html:target/report/report.html","json:target/cucumber/cucumber.json"},
-        plugin= {"com.alok.aut.Listeners.customReportListener"},
+        plugin= {"com.alok.aut.Listeners.customReportListener","json:target/cucumber/cucumber.json"},
+        //plugin= {"com.alok.aut.Listeners.customReportListener"},
         features="src/test/resources/featureFiles/BusticketBooking.feature",
         glue= "com/alok/aut/StepDef"
 )
@@ -24,9 +24,7 @@ public class TestNGCucumber   {
                            @Optional("IamOptional") String version,@Optional("IamOptional") String env) throws Exception {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         BrowserDriver browserDriver = new BrowserDriver(browserType);
-
     }
-
     @Test(groups = "Cucumber", description = "Runs Cucumber Feature", dataProvider = "scenarios")
     public void scenario(PickleWrapper pickleEvent, FeatureWrapper cucumberFeature) throws Throwable {
         testNGCucumberRunner.runScenario(pickleEvent.getPickle());
@@ -42,9 +40,7 @@ public class TestNGCucumber   {
     public void tearDownClass() throws Exception {
         testNGCucumberRunner.finish();
         BrowserDriver.getDriver().close();
-
     }
-
 }
 
 

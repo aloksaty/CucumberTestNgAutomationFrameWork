@@ -78,7 +78,6 @@ public class TestNgListener implements ITestListener, ISuiteListener, IInvokedMe
     }
     @Override
     public void onTestStart (ITestResult result) {
-        String Test = pickleWrapperHashMap.get("pickleEvent").getPickle().getName();
         DateFormat dateFormat = new SimpleDateFormat ("yyyyMMdd_HH-mm-ss");
         Date date = new Date ();
         Log.info (result. getTestName () + "Test-Case Started at:" + date);

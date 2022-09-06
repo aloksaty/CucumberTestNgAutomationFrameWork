@@ -8,11 +8,10 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
-
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 public final class BrowserDriver implements WebDriver {
 
     String browserName;
@@ -27,9 +26,12 @@ public final class BrowserDriver implements WebDriver {
     }
 
     private EventFiringWebDriver createDriver(String browserName) {
+        List<String> allBrowser=Stream.of (BrowserSetup.Browser.values ()).map (browser -> browser.name ()).collect (Collectors.toList ());
+        if (!allBrowser.contains (browserName)){
+                browserName="chrome";
+        }
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setBrowserName(browserName);
-
         if (browserName.equalsIgnoreCase("internet explorer")) {
             dc = DesiredCapabilities.internetExplorer();
             b = new BrowserSetup(BrowserSetup.Browser.IEXPLORE);
@@ -48,6 +50,7 @@ public final class BrowserDriver implements WebDriver {
             b = new BrowserSetup(BrowserSetup.Browser.NOBROWSER);
 
         }
+
         wd = b.invokeBrowser();
         driver = new EventFiringWebDriver(wd);
         DriverListener logListener = new DriverListener(browserName, wd);

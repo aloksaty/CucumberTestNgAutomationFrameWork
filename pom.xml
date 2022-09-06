@@ -193,7 +193,6 @@
             <artifactId>extentreports</artifactId>
             <version>4.1.5</version>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -251,13 +250,17 @@
                 <executions>
                     <execution>
                         <id>execution</id>
-                        <phase>test</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <projectName>LambdatestTodoSample</projectName>
-                            <outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+                            <outputDirectory>${project.build.directory}/cucumber-report</outputDirectory>
+                            <inputDirectory>${project.build.directory}/cucumber</inputDirectory>
+                            <jsonFiles>
+                                <param>**/*.json</param>
+                            </jsonFiles>
                             <buildNumber>1</buildNumber>
                         </configuration>
                     </execution>
