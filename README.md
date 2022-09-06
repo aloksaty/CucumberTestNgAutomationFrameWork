@@ -12,7 +12,7 @@ This project using the following languages and frameworks:
 - Log4J2 as the logging management strategy
 - WebDriverManager as the Selenium binaries management
 - Owner to minimize the code to handle the properties file
-- CSV ,DB Manager,Excel manager are created for data management. 
+- Json data ,CSV ,DB Manager,Excel manager are created for data management. 
 
 # Test architecture
 
