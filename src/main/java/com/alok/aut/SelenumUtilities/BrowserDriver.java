@@ -1,6 +1,6 @@
 package com.alok.aut.SelenumUtilities;
-
 import com.alok.aut.project.Util.DateManager;
+import com.alok.aut.project.Util.MapUI;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -8,7 +8,9 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -21,6 +23,8 @@ public final class BrowserDriver implements WebDriver {
     BrowserSetup b;
     int timeout =100;
     public BrowserDriver(String browserName) {
+        MapUI.loadUIMapProp();
+        MapUI.readProperties ();
         this.browserName = browserName;
         this.driver = createDriver(browserName);
     }

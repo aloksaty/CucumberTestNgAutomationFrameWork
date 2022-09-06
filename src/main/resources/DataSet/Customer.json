@@ -1,0 +1,122 @@
+{
+  "USA": [
+    {
+      "id": "USA_001",
+      "firstName": "David",
+      "lastName": "Smit",
+      "age": 35,
+      "emailAddress": "DavSam@Gmail.com",
+      "address": {
+        "streetAddress": "NY new Streat",
+        "city": "Dallas",
+        "postCode": "110088",
+        "state": "Dallas",
+        "country": "USA",
+        "county": "USA"
+      },
+      "phoneNumber": {
+        "home": "012345678",
+        "mob": "0987654321"
+      }
+    },
+    {
+      "id": "cust_002",
+      "firstName": "Virender",
+      "lastName": "Singh",
+      "age": 35,
+      "emailAddress": "Virender@Gmail.com",
+      "address": {
+        "streetAddress": "Palam Vihar",
+        "city": "Gurgaon",
+        "postCode": "122345",
+        "state": "Haryana",
+        "country": "India",
+        "county": "Delhi"
+      },
+      "phoneNumber": {
+        "home": "012345678",
+        "mob": "0987654321"
+      }
+    }
+  ],
+  "CAN": [
+    {
+      "id": "cust_001",
+      "firstName": "Lakshay",
+      "lastName": "Sharma",
+      "age": 35,
+      "emailAddress": "Lakshay@Gmail.com",
+      "address": {
+        "streetAddress": "Shalimar Bagh",
+        "city": "Delhi",
+        "postCode": "110088",
+        "state": "Delhi",
+        "country": "India",
+        "county": "Delhi"
+      },
+      "phoneNumber": {
+        "home": "012345678",
+        "mob": "0987654321"
+      }
+    },
+    {
+      "id": "cust_002",
+      "firstName": "Virender",
+      "lastName": "Singh",
+      "age": 35,
+      "emailAddress": "Virender@Gmail.com",
+      "address": {
+        "streetAddress": "Palam Vihar",
+        "city": "Gurgaon",
+        "postCode": "122345",
+        "state": "Haryana",
+        "country": "India",
+        "county": "Delhi"
+      },
+      "phoneNumber": {
+        "home": "012345678",
+        "mob": "0987654321"
+      }
+    }
+  ],
+  "IND": [
+    {
+      "id": "cust_001",
+      "firstName": "Lakshay",
+      "lastName": "Sharma",
+      "age": 35,
+      "emailAddress": "Lakshay@Gmail.com",
+      "address": {
+        "streetAddress": "Shalimar Bagh",
+        "city": "Delhi",
+        "postCode": "110088",
+        "state": "Delhi",
+        "country": "India",
+        "county": "Delhi"
+      },
+      "phoneNumber": {
+        "home": "012345678",
+        "mob": "0987654321"
+      }
+    },
+    {
+      "id": "cust_002",
+      "firstName": "Virender",
+      "lastName": "Singh",
+      "age": 35,
+      "emailAddress": "Virender@Gmail.com",
+      "address": {
+        "streetAddress": "Palam Vihar",
+        "city": "Gurgaon",
+        "postCode": "122345",
+        "state": "Haryana",
+        "country": "India",
+        "county": "Delhi"
+      },
+      "phoneNumber": {
+        "home": "012345678",
+        "mob": "0987654321"
+      }
+    }
+  ]
+}

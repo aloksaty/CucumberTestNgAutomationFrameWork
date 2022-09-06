@@ -1,14 +1,11 @@
 package com.alok.aut.Listeners;
-import com.alok.aut.SelenumUtilities.GetScreenShot;
 import com.alok.aut.project.Util.Log;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.Markup;
 import io.cucumber.testng.PickleWrapper;
 import org.testng.*;
 import org.testng.annotations.ITestAnnotation;
 import org.testng.annotations.Listeners;
 
-import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.text.DateFormat;
@@ -55,25 +52,23 @@ public class TestNgListener implements ITestListener, ISuiteListener, IInvokedMe
          * ZephyrClient.execTest(Test,"2");
          * Result.getTestContext().getFailedTests().removeResult((ITestNGMethod) Result);
          */
-
-        String Test = pickleWrapperHashMap.get("pickleEvent").getPickle().getName();;
-        GetScreenShot getScreenShot = new GetScreenShot (Test);
-        getScreenShot.capture (Test);
-        String ScreenShotPath = ".\\" + Test + ".png";
+/*        GetScreenShot getScreenShot = new GetScreenShot (Result.getName ());
+        getScreenShot.capture (Result.getName ());
+        String ScreenShotPath = ".\\" + Result.getName () + ".png";*/
         Log.error ("Test Case FAIL :" + Result.FAILURE);
         ExtentTestManager.getTest ().log (Status.FAIL, "Test Failed");
-        try {
-            ExtentTestManager.getTest ().fail ((Markup) ExtentTestManager.getTest ().addScreenCaptureFromPath (ScreenShotPath));
+ /*       try {
+            //ExtentTestManager.getTest ().fail ((Markup) ExtentTestManager.getTest ().addScreenCaptureFromPath
+            // (ScreenShotPath));
         } catch (IOException e) {
             Log.error (" Get ScreenShot Fail ");
             throw new RuntimeException (e);
-        }
+        }*/
     }
     // When Test case get Skipped, this method is called.
     @Override
     public void onTestSkipped (ITestResult Result) {
-        String Test = pickleWrapperHashMap.get("pickleEvent").getPickle().getName();;
-        Log.info ("Test Case FAIL :" +Test+": " +Result.SKIP);
+        Log.info ("Test Case FAIL :" +": " +Result.SKIP);
         ExtentTestManager.getTest ().log (Status.SKIP, "Test Skipped");
     }
     @Override
@@ -90,8 +85,7 @@ public class TestNgListener implements ITestListener, ISuiteListener, IInvokedMe
          * ZephyrClient.execTest(Test,"1");
          extentTest.log(LogStatus.UNKNOWN, stepName, details);
          extentTest.log(LogStatus.PASS, TestName);*/
-        String Test = pickleWrapperHashMap.get("pickleEvent").getPickle().getName();;
-        Log.info ("Test Case PASS " +Test+ " : "+ Result.SUCCESS);
+        Log.info ("Test Case PASS " + " : "+ Result.SUCCESS);
         ExtentTestManager.getTest ().log (Status.PASS, "Test passed");
     }
     @Override

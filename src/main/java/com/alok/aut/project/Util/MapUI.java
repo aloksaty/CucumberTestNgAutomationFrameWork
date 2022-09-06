@@ -19,13 +19,15 @@ public class MapUI {
     public static String ToMailId = null;
     public static String SubjectLine = null;
 
+    public  static  String jsonDataFile = null;
+
     //--------------JDBC---------------------
     public static String JDBCIP;
     public static String JDBCUserName;
     public static String JDBCPasword;
 
-    public static void loadUIMapProp (String fileName) {
-        String prop_path = System.getProperty ("src/main/resources/UImap.properties") +fileName;
+    public static void loadUIMapProp () {
+        String prop_path = "src/main/resources/UImap.properties";
         System.out.println (prop_path);
         //String prop_path = fileName;
         File file = new File (prop_path);
@@ -47,6 +49,7 @@ public class MapUI {
         FromMailId = prob.getProperty ("FromMailId");
         ToMailId = prob.getProperty ("ToMailId");
         SubjectLine = prob.getProperty ("SubjectLine");
+        jsonDataFile= prob.getProperty ("jsonDataFile");
     }
     public static void userInfoLoad () throws Exception {
         BestExecFile = System.getProperty ("user.dir") + "\\DataFile\\" + BestExec;

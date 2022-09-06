@@ -15,13 +15,12 @@ Feature: Ticket booking for bus
       Examples:
         |name|age|sex|
         |alok|30|m|
-  @ignore
   Scenario Outline: User Book flight ticket by providing the passenger details
     Given : User navigate to flight ticket booking page
     #Given I am available on "Tuesday,Friday,Sunday"
-    When He enter the <name> , <age> and <sex>
+    When He enter user details <countryCode> , <id>
     And : click on submit button
     Then : He should be able to book the ticket
     Examples:
-      |name|age|sex|
-      |alok|30|m|
+      |countryCode|id|
+      |USA|USA_001|

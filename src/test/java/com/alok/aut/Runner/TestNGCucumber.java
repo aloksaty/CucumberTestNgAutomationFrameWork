@@ -1,10 +1,7 @@
 package com.alok.aut.Runner;
 import com.alok.aut.Listeners.TestNgListener;
 import com.alok.aut.SelenumUtilities.BrowserDriver;
-import io.cucumber.testng.CucumberOptions;
-import io.cucumber.testng.FeatureWrapper;
-import io.cucumber.testng.PickleWrapper;
-import io.cucumber.testng.TestNGCucumberRunner;
+import io.cucumber.testng.*;
 import org.testng.annotations.*;
 @CucumberOptions(
 
@@ -13,9 +10,8 @@ import org.testng.annotations.*;
         features="src/test/resources/featureFiles/BusticketBooking.feature",
         glue= "com/alok/aut/StepDef"
 )
-public class TestNGCucumber   {
-    PickleWrapper pickleEvent;
 
+public class TestNGCucumber  {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
@@ -25,19 +21,21 @@ public class TestNGCucumber   {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         BrowserDriver browserDriver = new BrowserDriver(browserType);
     }
-    @Test(groups = "Cucumber", description = "Runs Cucumber Feature", dataProvider = "scenarios")
-    public void scenario(PickleWrapper pickleEvent, FeatureWrapper cucumberFeature) throws Throwable {
+   @Test(groups = "Cucumber", description = "Runs Cucumber Feature", dataProvider = "scenarios")
+    public void
+   scenario(PickleWrapper pickleEvent, FeatureWrapper cucumberFeature) throws Throwable {
         testNGCucumberRunner.runScenario(pickleEvent.getPickle());
-        this.pickleEvent=pickleEvent;
         TestNgListener.pickleWrapperHashMap.put("pickleEvent",pickleEvent);
     }
+
     @DataProvider
     public Object[][] scenarios() {
         return testNGCucumberRunner.provideScenarios();
+
     }
 
     @AfterClass(alwaysRun = true)
-    public void tearDownClass() throws Exception {
+    public void tearDownClass() {
         testNGCucumberRunner.finish();
         BrowserDriver.getDriver().close();
     }
