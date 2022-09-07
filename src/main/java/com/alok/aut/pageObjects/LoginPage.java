@@ -1,10 +1,7 @@
 package com.alok.aut.pageObjects;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 	private WebDriver driver;
@@ -21,7 +18,7 @@ public class LoginPage {
 
 	public void login() {
 		submit.click();
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+
 	}
 	
 	public boolean loginPass() {

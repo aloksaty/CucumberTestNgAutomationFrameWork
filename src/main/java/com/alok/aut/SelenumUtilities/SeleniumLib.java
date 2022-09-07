@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumLib {
@@ -41,7 +42,7 @@ public class SeleniumLib {
 		long timeOut = Constants.implicitWait*1000;
 		while(starttime - timeTOload<=timeOut){
 			try{
-				(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(element));
+				(new WebDriverWait(driver, Duration.ofSeconds (10))).until(ExpectedConditions.elementToBeClickable(element));
 				Thread.sleep(500);
 				return  true;
 		}catch (Exception e){
@@ -70,7 +71,7 @@ public class SeleniumLib {
 	}
 	public static void click(WebDriver driver,WebElement element) {
 		try {
-				(new WebDriverWait(driver, Constants.timeout)).until(ExpectedConditions.elementToBeClickable(element));
+				(new WebDriverWait(driver, Duration.ofSeconds (10))).until(ExpectedConditions.elementToBeClickable(element));
 				element.click();
 			}catch(	StaleElementReferenceException sere) {
 				// simply retry finding the element in the refreshed DOM
@@ -137,19 +138,19 @@ public class SeleniumLib {
 
 	public WebElement findVisibleElement(WebDriver driver,By locator) {
 
-		WebElement element = new WebDriverWait(driver, Constants.timeout)
+		WebElement element = new WebDriverWait(driver, Duration.ofSeconds (10))
 				.until( ExpectedConditions.visibilityOfElementLocated (locator));
 		return element;
 	}
 
 	public WebElement findClickableElement(WebDriver driver,By locator) {
-		WebElement element = new WebDriverWait(driver, Constants.timeout)
+		WebElement element = new WebDriverWait(driver, Duration.ofSeconds (10))
 				.until( ExpectedConditions.elementToBeClickable (locator));
 		return element;
 	}
 
 	public WebElement findHiddenElement(WebDriver driver,By locator) {
-		WebElement element = new WebDriverWait(driver,Constants.timeout)
+		WebElement element = new WebDriverWait(driver,Duration.ofSeconds (10))
 				.until(ExpectedConditions.presenceOfElementLocated (locator));
 		return element;
 	}
@@ -232,13 +233,13 @@ public class SeleniumLib {
 	}
 	public static void waitForElementpresents(WebDriver driver,By locator){
 
-		WebDriverWait wait = new WebDriverWait(driver,Constants.timeout);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds (10));
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 
 	}
 	public static void waitForElementIsVisible(WebDriver driver,By locator){
 
-		WebDriverWait wait = new WebDriverWait(driver,1000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds (10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	public static void waitStatic()  {

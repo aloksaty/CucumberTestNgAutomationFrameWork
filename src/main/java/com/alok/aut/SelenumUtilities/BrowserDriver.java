@@ -37,15 +37,15 @@ public final class BrowserDriver implements WebDriver {
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setBrowserName(browserName);
         if (browserName.equalsIgnoreCase("internet explorer")) {
-            dc = DesiredCapabilities.internetExplorer();
+           // dc = DesiredCapabilities.internetExplorer();
             b = new BrowserSetup(BrowserSetup.Browser.IEXPLORE);
         }
         if (browserName.equalsIgnoreCase("Firefox")) {
-            dc = DesiredCapabilities.firefox();
+           // dc = DesiredCapabilities.firefox();
             b = new BrowserSetup(BrowserSetup.Browser.FIREFOX);
         }
         if (browserName.equalsIgnoreCase("Chrome")) {
-            dc = DesiredCapabilities.chrome();
+           // dc = DesiredCapabilities.chrome();
             b = new BrowserSetup(BrowserSetup.Browser.CHROME);
 
         }

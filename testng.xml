@@ -15,7 +15,7 @@
     <parameter name="env" value="QE" />
     <parameter name="testType" value="${testType}" />
     <classes>
-      <class name="com.alok.aut.Runner.TestNGCucumber"/>
+      <class name="com.alok.aut.Runner.TestNGFactory"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -36,15 +36,7 @@ public class customReportListener implements EventListener {
         publisher.registerHandlerFor (TestCaseFinished.class, this::ScenarioFinished);
     }
     private void ScenarioFinished (TestCaseFinished event) {
-
-        if (event.getResult ().getStatus ().toString () == "PASSED") {
-            //step.log (Status.PASS, "******** Scenario passed");
-        } else if (event.getResult ().getStatus ().toString () == "SKIPPED") {
-            //step.log (Status.SKIP, "This step was skipped ");
-        } else {
-            //step.log (Status.FAIL, "This failed");
-        }
-
+       
     }
     ;
     /*

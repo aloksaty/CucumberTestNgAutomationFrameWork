@@ -8,8 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;
 
@@ -62,9 +60,6 @@ public class BrowserSetup {
 				ChromeOptions options = new ChromeOptions();
 				options.setExperimentalOption("prefs", chromePrefs);
 				options.addArguments("start-maximized");
-				DesiredCapabilities cap = DesiredCapabilities.chrome();
-				cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-				cap.setCapability(ChromeOptions.CAPABILITY, options);
 				wd= new ChromeDriver(options);
 				break;
 			case IEXPLORE :
