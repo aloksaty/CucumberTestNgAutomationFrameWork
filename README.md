@@ -27,7 +27,7 @@ You will see the following items in this architecture:
 * [Logging](#logging)
 * [Configuration files](#configuration-files)
 * [Parallel execution](#parallel-execution)
-* Cucumber For BDD
+* Cucumber/TestNg For BDD
 
 
 Do you have any other items to add to this test architecture? Please do a pull request or open an issue to discuss.
